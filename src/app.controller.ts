@@ -1,5 +1,6 @@
 import { Controller, Post, Body, HttpCode } from '@nestjs/common'
 import { AppService } from './app.service'
+import { PingRequestResponse, PingRequestBody } from './dto'
 
 @Controller()
 export class AppController {
@@ -7,7 +8,7 @@ export class AppController {
 
   @Post('/ping')
   @HttpCode(200)
-  ping(@Body('message') message): Promise<any> {
-    return this.appService.ping(message)
+  ping(@Body() pingRequstBody: PingRequestBody): Promise<PingRequestResponse> {
+    return this.appService.ping(pingRequstBody.message)
   }
 }

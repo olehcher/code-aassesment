@@ -19,14 +19,14 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
-    ping(message) {
-        return this.appService.ping(message);
+    ping(pingRequstBody) {
+        return this.appService.ping(pingRequstBody.message);
     }
 };
 __decorate([
     (0, common_1.Post)('/ping'),
     (0, common_1.HttpCode)(200),
-    __param(0, (0, common_1.Body)('message')),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
