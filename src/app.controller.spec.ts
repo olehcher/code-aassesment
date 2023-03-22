@@ -21,7 +21,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return echo from Postman', async () => {
-      expect(await appController.ping('some message')).toBe({
+      expect(await appController.ping({ message: 'some message' })).toBe({
         echo: {
           args: {
             message: 'some message'
