@@ -1,4 +1,6 @@
-export type PingRequestResponse = {
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+
+export class PingRequestResponse {
   echo: {
     args: {
       message: string
@@ -19,6 +21,11 @@ export type PingRequestResponse = {
   version: string
 }
 
-export type PingRequestBody = {
+export class PingRequestBody {
+  @ApiProperty({
+    type: String,
+    description: 'This is a required property',
+    example: 'some message'
+  })
   message: string
 }

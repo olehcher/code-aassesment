@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
+const dto_1 = require("./dto");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
@@ -28,7 +29,7 @@ __decorate([
     (0, common_1.HttpCode)(200),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [dto_1.PingRequestBody]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "ping", null);
 AppController = __decorate([

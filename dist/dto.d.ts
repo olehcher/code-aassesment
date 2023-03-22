@@ -1,4 +1,4 @@
-export type PingRequestResponse = {
+export declare class PingRequestResponse {
     echo: {
         args: {
             message: string;
@@ -17,7 +17,7 @@ export type PingRequestResponse = {
     timestamp: number;
     env: string;
     version: string;
-};
-export type PingRequestBody = {
+}
+export declare class PingRequestBody {
     message: string;
-};
+}
